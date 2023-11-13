@@ -5,44 +5,18 @@ namespace FizzBuzz_Test
     [TestClass]
     public class KalkylatorTests
     {
-        [TestMethod]
-       
-        public void När_FizzBuzzKalkyl_FIZZBUZZ()
-        {
-            // Arrange
-            int randomNummer = 15;
-
-            // Act
-           string result = Kalkylator.FizzBuzzKalkyl(randomNummer);
-
-            // Assert
-            Assert.AreEqual("FIZZBUZZ", result);
-        }
 
         [TestMethod]
-        public void När_FizzBuzzKalkyl_FIZZ()
+        [DataRow("FIZZBUZZ", 15)]
+        [DataRow("FIZZ", 6)]
+        [DataRow("BUZZ", 25)]
+        public void FizzBuzzKalkyl_ReturnsExpectedResult(string expectedResult, int randomNummer)
         {
-            // Arrange
-            int randomNummer = 6;
-
             // Act
-           string result = Kalkylator.FizzBuzzKalkyl(randomNummer);
+            string result = Kalkylator.FizzBuzzKalkyl(randomNummer);
 
             // Assert
-            Assert.AreEqual("FIZZ", result);
-        }
-
-        [TestMethod]
-        public void När_FizzBuzzKalkyl_BUZZ()
-        {
-            // Arrange
-            int randomNummer = 25;
-
-            // Act
-           string result = Kalkylator.FizzBuzzKalkyl(randomNummer);
-
-            // Assert
-            Assert.AreEqual("BUZZ", result);
+            Assert.AreEqual(expectedResult, result);
         }
     }
 }
