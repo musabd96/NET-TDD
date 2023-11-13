@@ -10,13 +10,13 @@ namespace FizzBuzz_Test
         public void När_FizzBuzzKalkyl_EjImplementerad_Then_ShouldThrow_NotImplementedException()
         {
             // Arrange
-            int randomNummer = 3;
+            int randomNummer = 15;
 
             // Act
            string result = Kalkylator.FizzBuzzKalkyl(randomNummer);
 
             // Assert
-            Assert.AreEqual("FIZZ", result);
+            Assert.AreEqual("FIZZBUZZ", result);
         }
     }
 }
