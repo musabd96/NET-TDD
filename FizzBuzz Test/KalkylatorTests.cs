@@ -1,4 +1,5 @@
 using FizzBuzz;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FizzBuzz_Test
 {
@@ -7,16 +8,25 @@ namespace FizzBuzz_Test
     {
 
         [TestMethod]
-        [DataRow("FIZZBUZZ", 15)]
-        [DataRow("FIZZ", 6)]
-        [DataRow("BUZZ", 25)]
+        [DynamicData(nameof(FizzBuzzTestCases), DynamicDataSourceType.Method)]
         public void FizzBuzzKalkyl_ReturnsExpectedResult(string expectedResult, int randomNummer)
         {
             // Act
             string result = Kalkylator.FizzBuzzKalkyl(randomNummer);
 
+            Console.WriteLine($"{randomNummer}  =>  {expectedResult}");
+
             // Assert
             Assert.AreEqual(expectedResult, result);
+
         }
+
+        public static IEnumerable<object[]> FizzBuzzTestCases()
+        {
+            return Enumerable.Range(1, 20)
+                .Select(i => new object[] { Kalkylator.FizzBuzzKalkyl(i), i });
+        }
+
+
     }
 }

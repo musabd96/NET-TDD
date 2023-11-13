@@ -10,6 +10,10 @@
             return nummer.ToString();
         }
 
+        public static void ConsoleWriteLine(string msg)
+        {
+            Console.WriteLine(msg);
+        }
 
     }
 
