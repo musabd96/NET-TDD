@@ -23,7 +23,7 @@ namespace FizzBuzz_Test
         public void När_FizzBuzzKalkyl_FIZZ()
         {
             // Arrange
-            int randomNummer = 9;
+            int randomNummer = 6;
 
             // Act
            string result = Kalkylator.FizzBuzzKalkyl(randomNummer);
@@ -33,7 +33,7 @@ namespace FizzBuzz_Test
         }
 
         [TestMethod]
-        public void När_FizzBuzzKalkyl_EjImplementerad_BUZZ()
+        public void När_FizzBuzzKalkyl_BUZZ()
         {
             // Arrange
             int randomNummer = 25;
