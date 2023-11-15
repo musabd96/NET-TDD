@@ -1,11 +1,51 @@
 using FizzBuzz;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FizzBuzz_Test
 {
+    
+
     [TestClass]
     public class KalkylatorTests
     {
+        [TestMethod]
+        public void När_FizzBuzzKalkyl_FIZZBUZZ()
+        {
+            // Arrange
+            int randomNummer = 15;
+
+            // Act
+            string result = Kalkylator.FizzBuzzKalkyl(randomNummer);
+
+            // Assert
+            Assert.AreEqual("FIZZBUZZ", result);
+        }
+        
+        [TestMethod]
+        public void När_FizzBuzzKalkyl_FIZZ()
+        {
+            // Arrange
+            int randomNummer = 9;
+
+            // Act
+            string result = Kalkylator.FizzBuzzKalkyl(randomNummer);
+
+            // Assert
+            Assert.AreEqual("FIZZ", result);
+        }
+        
+        [TestMethod]
+        public void När_FizzBuzzKalkyl_BUZZ()
+        {
+            // Arrange
+            int randomNummer = 10;
+
+            // Act
+            string result = Kalkylator.FizzBuzzKalkyl(randomNummer);
+
+            // Assert
+            Assert.AreEqual("BUZZ", result);
+        }
+
 
         [TestMethod]
         [DynamicData(nameof(FizzBuzzTestCases), DynamicDataSourceType.Method)]
